@@ -19,7 +19,7 @@ services:
       - "127.0.0.1:${APP_PORT:-8010}:8000"   # サーバ上の Nginx からだけ届く(外には公開しない)
     volumes:
       - audio:/data/audio
-      # 再配布禁止の 3D モデル(Git に入れていない)。deploy.sh がサーバの /opt/ai-live-commerce/models に送る
+      # 3D モデル(作者の許可を得て非商用に限り同梱)。deploy.sh がサーバの /opt/ai-live-commerce/models に送る
       - ../../models:/app/app/static/models/custom:ro
     depends_on:
       db:

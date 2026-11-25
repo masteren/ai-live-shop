@@ -2,6 +2,7 @@
 
 ## 做了什么
 - 公开版的主播模型换成模之屋的「DeepSeek蓝色大肥鱼」(作者 喜欢看雨OvO)。
+- (2026-11-25 更新:作者同意非商用使用后,模型已放进 Git,条件见 `app/static/models/custom/README.md`。下面是当时的做法)
 - 模型文件**不进 Git**:放在 `app/static/models/custom/host.vrm`(`.gitignore` 已排除),`deploy.sh` 单独用 scp 传到服务器 `/opt/ai-live-commerce/models/`,compose 以只读方式挂进容器。
 - `vrm.js` 按顺序尝试 `custom/host.vrm` → `hana.vrm`(pixiv 示例)。别人 clone 仓库时没有大肥鱼,也能正常显示。
 - 模型里 sad / relaxed / surprised 三个表情是空的,用模型自带的形状(困る / にこり / びっくり)补上,所以「困扰」「害羞」现在脸会变。

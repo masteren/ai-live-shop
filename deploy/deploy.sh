@@ -19,7 +19,7 @@ git archive --format=tar --prefix=src.new/ HEAD | ssh "$HOST" 'set -e
   if [ -d src.old ]; then rm -r src.old; fi
   if [ -d src ]; then mv src src.old; fi
   mv src.new src'
-# Git に入れていない 3D モデルを別に送る(手元にあり、サーバと違うときだけ)
+# 3D モデルを別に送る(手元にあり、サーバと違うときだけ)
 MODEL=app/static/models/custom/host.vrm
 ssh "$HOST" 'mkdir -p /opt/ai-live-commerce/models'
 if [ -f "$MODEL" ]; then

@@ -18,9 +18,9 @@
 - 開発 DB は MySQL(`docker compose up -d db`)。単体テストは一時 SQLite。**テストを開発 DB に対して実行しない**(テーブルを作り直すため)。MySQL でテストするときは別のデータベース(例 `livecommerce_test`)を `TEST_DATABASE_URL` で指定。
 - モデル(`app/models.py`)を変えたら Alembic のマイグレーションを作る。既存データがある前提で書く(NOT NULL 列には server_default、制約追加の前にデータを整える)。
 - サーバは単一プロセスで動かす(WebSocket 接続・AI キュー・レート制限がメモリ上にある)。
-- 変更したら `pytest` → 必要に応じて E2E(`test_e2e.py`、空の DB で起動したサーバに対して)→ コミット。push は作者の了承を得てから(GitHub は公開リポジトリ。秘密情報・再配布禁止の 3D モデルを入れない)。
+- 変更したら `pytest` → 必要に応じて E2E(`test_e2e.py`、空の DB で起動したサーバに対して)→ コミット。push は作者の了承を得てから(GitHub は公開リポジトリ。秘密情報を入れない)。
 - 同じ処理を2か所に書かない。販売中の商品の取得は `app/queries.py`、クライアント IP は `ratelimit.client_ip`、画面の割引率は `index.html` の `offRate()` を使う。
-- 公開版の 3D モデル(模之屋の「DeepSeek蓝色大肥鱼」、作者 喜欢看雨OvO)は**再配布禁止**。`app/static/models/custom/host.vrm` に置き、Git に入れない・作者情報を書き換えない。ないときは pixiv のサンプル(`hana.vrm`)で表示される。立ち絵を作り直すときはこのモデルから書き出す。
+- 公開版の 3D モデル(模之屋の「DeepSeek蓝色大肥鱼」、作者 喜欢看雨OvO)は、2026-11-21 に作者から非商用の利用許可を得て、2026-11-25 から `app/static/models/custom/host.vrm` として Git に入れている(作者の判断)。**商用に使わない・作者情報を書き換えない・クレジットを消さない**(条件は `app/static/models/custom/README.md`)。ないときは pixiv のサンプル(`hana.vrm`)で表示される。立ち絵を作り直すときはこのモデルから書き出す。
 - 画面のスクリプトは app/static/js/ に置く。HTML にスクリプトや onclick を直接書かない(Content-Security-Policy で実行されない)。
 - パスワードのハッシュ計算は重い(60万回)ので `asyncio.to_thread` で呼ぶ。テストでは `PASSWORD_ITERATIONS=1000`(`tests/conftest.py`)。
 - 「読んでから書く」処理を見つけたら同時実行を疑う(これまでに売り越し・二重注文・カート重複の3件を修正)。再現テストを書いてから直す。

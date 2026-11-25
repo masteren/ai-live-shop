@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { VRMLoaderPlugin, VRMUtils, VRMExpressionPresetName } from '@pixiv/three-vrm';
 
-// 使うモデル:custom/host.vrm があればそれ(再配布禁止のモデルなので Git に入れず、サーバへは deploy.sh が別に送る)。
+// 使うモデル:custom/host.vrm があればそれ(作者の許可を得て非商用に限り同梱。サーバへは deploy.sh が送る)。
 // なければ Git に入っている pixiv のサンプルモデル
 const MODEL_URLS = ['/static/models/custom/host.vrm', '/static/models/hana.vrm'];
 

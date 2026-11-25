@@ -62,5 +62,5 @@ http://127.0.0.1:8000 (管理画面は `/admin`)。LLM のキーがなくても�
 テスト:`pip install -r requirements-dev.txt && pytest`
 
 ## 素材
-- 3D モデル:[DeepSeek蓝色大肥鱼](https://www.aplaybox.com/details/model/PIuLwHuG6mKr)(作者 [喜欢看雨OvO](https://space.bilibili.com/135840826))。再配布禁止のため、リポジトリには含めていない。ない場合は pixiv の [VRM サンプルモデル](https://vrm.dev/licenses/1.0/)で表示する
+- 3D モデル:[DeepSeek蓝色大肥鱼](https://www.aplaybox.com/details/model/PIuLwHuG6mKr)(作者 [喜欢看雨OvO](https://space.bilibili.com/135840826))。作者の許可を得て、非商用に限り同梱している(`app/static/models/custom/README.md`)。ない場合は pixiv の [VRM サンプルモデル](https://vrm.dev/licenses/1.0/)で表示する
 - 音声:[VOICEVOX](https://voicevox.hiroshiba.jp/)(ずんだもん)
