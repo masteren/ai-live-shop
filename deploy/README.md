@@ -36,7 +36,7 @@
 git commit ...           # 送るのはコミット済みの内容だけ
 ./deploy/deploy.sh       # コードを送り、コンテナを作り直す。DB と音声キャッシュはボリュームに残る
 ```
-3D モデル(`app/static/models/custom/host.vrm`)は作者の許可を得て非商用に限り Git に入れている。`deploy.sh` が手元のファイルをサーバの `/opt/ai-live-commerce/models/host.vrm` へ送り(内容が変わったときだけ)、コンテナには読み取り専用で見せる。サーバにないときは pixiv のサンプルモデルで表示される。
+3D モデル(`app/static/models/custom/host.vrm`)は作者の許可を得て非商用に限り使用している。再配布は許可されていないため Git には入れていない。`deploy.sh` が手元のファイルをサーバの `/opt/ai-live-commerce/models/host.vrm` へ送り(内容が変わったときだけ)、コンテナには読み取り専用で見せる。サーバにないときは pixiv のサンプルモデルで表示される。
 
 ## よく使うコマンド(サーバで)
 ```bash

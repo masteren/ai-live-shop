@@ -20,7 +20,7 @@
 - サーバは単一プロセスで動かす(WebSocket 接続・AI キュー・レート制限がメモリ上にある)。
 - 変更したら `pytest` → 必要に応じて E2E(`test_e2e.py`、空の DB で起動したサーバに対して)→ コミット。push は作者の了承を得てから(GitHub は公開リポジトリ。秘密情報を入れない)。
 - 同じ処理を2か所に書かない。販売中の商品の取得は `app/queries.py`、クライアント IP は `ratelimit.client_ip`、画面の割引率は `index.html` の `offRate()` を使う。
-- 公開版の 3D モデル(模之屋の「DeepSeek蓝色大肥鱼」、作者 喜欢看雨OvO)は、2026-11-21 に作者から非商用の利用許可を得て、2026-11-25 から `app/static/models/custom/host.vrm` として Git に入れている(作者の判断)。**商用に使わない・作者情報を書き換えない・クレジットを消さない**(条件は `app/static/models/custom/README.md`)。ないときは pixiv のサンプル(`hana.vrm`)で表示される。立ち絵を作り直すときはこのモデルから書き出す。
+- 公開版の 3D モデル(模之屋の「DeepSeek蓝色大肥鱼」、作者 喜欢看雨OvO)は、2026-11-21 に作者から非商用の利用許可を得て、`app/static/models/custom/host.vrm` に置いている。再配布は許可されていないため **Git には入れない**(2026-11-25 に一度入れたが、2026-11-26 に外した。`.gitignore` 済み。過去のコミットには残っている)。別の PC で clone したときはファイルがないので、Mac からコピーする。**商用に使わない・作者情報を書き換えない・クレジットを消さない**(条件は `app/static/models/custom/README.md`)。ないときは pixiv のサンプル(`hana.vrm`)で表示される。立ち絵を作り直すときはこのモデルから書き出す。
 - 画面のスクリプトは app/static/js/ に置く。HTML にスクリプトや onclick を直接書かない(Content-Security-Policy で実行されない)。
 - パスワードのハッシュ計算は重い(60万回)ので `asyncio.to_thread` で呼ぶ。テストでは `PASSWORD_ITERATIONS=1000`(`tests/conftest.py`)。
 - 「読んでから書く」処理を見つけたら同時実行を疑う(これまでに売り越し・二重注文・カート重複の3件を修正)。再現テストを書いてから直す。

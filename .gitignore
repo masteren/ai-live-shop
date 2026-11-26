@@ -33,5 +33,8 @@ DerivedData/
 # 旧 venv のバックアップ
 venv-*.bak/
 
-# 作業用に置いた VRM(公開版のモデルは app/static/models/custom/ にあり、Git に入れている)
+# 作業用に置いた VRM
 /*.vrm
+
+# 公開版の 3D モデル(作者の許可は非商用の利用のみで、再配布は許可されていないため Git に入れない。サーバへは deploy.sh が送る)
+app/static/models/custom/host.vrm
