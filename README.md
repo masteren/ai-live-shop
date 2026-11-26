@@ -4,7 +4,7 @@
 
 AI ホスト「花奈」がライブ配信のコメントに音声と表情で答え、そのまま購入まで完結する、日本向けライブコマースの Web アプリと iOS アプリ。
 
-**デモ:** https://live.masteren.cloud
+**公開URL:** https://live.masteren.cloud
 
 <p>
   <img src="docs/images/web_live_2.png" alt="Web版ライブ画面" width="62%">

@@ -4,7 +4,7 @@
 
 AI 主播「花奈」在直播中用语音和表情回答评论，观众可以直接下单购买。面向日本市场的直播带货 Web 应用 + iOS 应用。
 
-**演示:** https://live.masteren.cloud
+**公开网址:** https://live.masteren.cloud
 
 <p>
   <img src="images/web_live_2.png" alt="Web 版直播画面" width="62%">
